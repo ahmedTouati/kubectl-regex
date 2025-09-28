@@ -66,10 +66,10 @@ All namespaces
 kubectl regex get pods "nginx" -A
 ```
 
-# ⚙️ Regex syntax
+## ⚙️ Regex syntax
 
 Uses [Go’s built-in regexp](https://github.com/google/re2)
 
-# 📄 License
+## 📄 License
 
 Apache 2.0 License.
