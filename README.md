@@ -15,7 +15,7 @@ This repository implements a [kubectl](https://github.com/kubernetes/kubectl) pl
  (safe, no catastrophic backtracking)
 
  ### 💡 Tired of long shell pipelines just to clean up resources?
-Instead of typing something like:
+Instead of typing something like to delete all pods that contain "app" in current namespace:
 
 ```bash
 kubectl get pods | grep "app" | awk '{print $1}' | xargs kubectl delete pods
