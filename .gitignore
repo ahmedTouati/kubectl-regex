@@ -1,0 +1,19 @@
+# Binaries
+/bin/
+dist/
+*.exe
+*.test
+
+# Build & coverage
+*.out
+
+# IDEs
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# krew file
+regex.yaml
