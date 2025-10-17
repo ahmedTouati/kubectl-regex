@@ -5,7 +5,7 @@ This repository implements a [kubectl](https://github.com/kubernetes/kubectl) pl
 ## Features
 🔍 Get resources by regex (Pods, Deployments, Services, ConfigMaps, CRDs, …)
 
-🗑 Delete resources by regex
+🗑 Delete resources by regex with confirmation
 
 🏷 Works with any resource supported by your cluster’s API
 
@@ -57,8 +57,8 @@ Delete resources
 # Delete all configmaps containing "app" in namespace foo
 kubectl regex delete configmaps "app" -n foo
 
-# Delete deployments starting with "test-" in default namespace
-kubectl regex delete deployments "^test-"
+# Delete all deployments whose names start with "test-" in the default namespace, without asking for confirmation (use with caution)
+kubectl regex delete deployments "^test-" --yes
 ```
 
 All namespaces
