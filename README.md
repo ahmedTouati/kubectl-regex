@@ -1,4 +1,4 @@
-# kubectl-regex
+# kubectl-regex-match
 
 This repository implements a [kubectl](https://github.com/kubernetes/kubectl) plugin for get/delete kubernetes resources by regex patterns.
 
@@ -22,15 +22,15 @@ kubectl get pods | grep "app" | awk '{print $1}' | xargs kubectl delete pods
 ```
 You can simply run:
 ```bash
-kubectl regex delete pods "app"
+kubectl regex-match delete pods "app"
 ```
 
 ## Install (local build)
 ```bash
-git clone https://github.com/ahmedTouati/kubectl-regex.git
-cd kubectl-regex
-go build -o kubectl-regex cmd/kubectl-regex.go
-mv kubectl-regex /usr/local/bin/
+git clone https://github.com/ahmedTouati/kubectl-regex-match.git
+cd kubectl-regex-match
+go build -o kubectl-regex-match cmd/kubectl-regex-match.go
+mv kubectl-regex-match /usr/local/bin/
 ```
 
 Check plugin discovery:
@@ -43,27 +43,27 @@ kubectl plugin list
 Get resources
 ```bash
 # Get pods starting with "nginx-"
-kubectl regex get pods "^nginx-"
+kubectl regex-match get pods "^nginx-"
 
 # Get services ending with "-svc"
-kubectl regex get services ".*-svc"
+kubectl regex-match get services ".*-svc"
 
 # Get deployments containing "web" in namespace "foo"
-kubectl regex get deployments "web" -n "foo"
+kubectl regex-match get deployments "web" -n "foo"
 ```
 
 Delete resources
 ```bash
 # Delete all configmaps containing "app" in namespace foo
-kubectl regex delete configmaps "app" -n foo
+kubectl regex-match delete configmaps "app" -n foo
 
 # Delete all deployments whose names start with "test-" in the default namespace, without asking for confirmation (use with caution)
-kubectl regex delete deployments "^test-" --yes
+kubectl regex-match delete deployments "^test-" --yes
 ```
 
 All namespaces
 ```bash
-kubectl regex get pods "nginx" -A
+kubectl regex-match get pods "nginx" -A
 ```
 
 ## ⚙️ Regex syntax

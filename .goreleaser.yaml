@@ -3,9 +3,9 @@ before:
   hooks:
   - go mod download
 builds:
-- id: kubectl-regex
-  main: ./cmd/kubectl-regex.go
-  binary: kubectl-regex
+- id: kubectl-regex-match
+  main: ./cmd/kubectl-regex-match.go
+  binary: kubectl-regex-match
   env:
   - CGO_ENABLED=0
   goos:
@@ -21,7 +21,7 @@ builds:
 
 archives:
 - builds:
-  - kubectl-regex
+  - kubectl-regex-match
   name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
   wrap_in_directory: false
   format: tar.gz

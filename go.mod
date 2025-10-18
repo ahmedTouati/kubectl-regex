@@ -1,4 +1,4 @@
-module kubectl-regex
+module kubectl-regex-match
 
 go 1.25.1
 
