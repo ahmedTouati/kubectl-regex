@@ -21,4 +21,4 @@ dist/
 Thumbs.db
 
 # krew file
-regex.yaml
+regex-match.yaml
