@@ -17,13 +17,13 @@ import (
 var (
 	RegexExample = `
 	# list all pods starting with "nginx-" in current context's namespace
-	%[1]s regex-match get pods "^nginx-"
+	%[1]s regex get pods "^nginx-"
 
 	# list all services ending with "web" in namespace "foo"
-	%[1]s regex-match get services "web$"
+	%[1]s regex get services "web$"
 	
 	# delete all configMaps in the "foo" namespace containing "app"
-	%[1]s regex-match delete configMaps "app" -n foo
+	%[1]s regex delete configMaps "app" -n foo
 	`
 	kubeFlags *genericclioptions.ConfigFlags
 
@@ -33,12 +33,12 @@ var (
 
 func NewRegExCmd(streams genericiooptions.IOStreams) *cobra.Command {
 	cmd := &cobra.Command{
-		Use:          "regex-match",
+		Use:          "regex",
 		Short:        "Use RegEx to manage Kubernetes resources",
 		Example:      fmt.Sprintf(RegexExample, "kubectl"),
 		SilenceUsage: true,
 		Annotations: map[string]string{
-			cobra.CommandDisplayNameAnnotation: "kubectl regex-match",
+			cobra.CommandDisplayNameAnnotation: "kubectl regex",
 		},
 	}
 	kubeFlags = genericclioptions.NewConfigFlags(true)
